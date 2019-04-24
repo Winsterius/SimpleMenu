@@ -17,7 +17,6 @@ namespace SimpleMenu
                 Console.Clear();
                 Console.WriteLine("S -> Summe berechnen \nF -> Fakultät berechnen \nG -> Größten gemeinsamen Teiler berechnen \nM -> Meilen berechnen \nE -> Programm beenden");
                 menu.ShowMenu(Console.ReadLine());
-                Console.ReadKey();
             }
         }                    
     }
