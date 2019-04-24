@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleMenu.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,12 @@ namespace SimpleMenu.Model
 {
     public class Calculations
     {
-        int i, j;
+        public static int i, j;
+        Checkings checkings = new Checkings(); 
+        
         public int GetLargeDivider()
         {
-            CheckNumbers();
+            checkings.CheckNumbers();
             int counter = i;
 
             while (counter > 0)
@@ -24,12 +27,12 @@ namespace SimpleMenu.Model
         }
         public int GetSumme()
         {
-            CheckNumbers();
+            checkings.CheckNumbers();
             return i + j;
         }
         public int GetFaculty()
         {
-            CheckNumber();
+            checkings.CheckNumber();
 
             int faculty = 1;
             int count = 1;
@@ -43,23 +46,9 @@ namespace SimpleMenu.Model
         }
         public double GetMile()
         {
-            CheckNumber();
+            checkings.CheckNumber();
             return 1.6009344 * i;
         }
-        void CheckNumbers()
-        {
-            Console.WriteLine("Geben Sie zwei Zahlen ein");
-            if (int.TryParse(Console.ReadLine(), out int firstNumber) && int.TryParse(Console.ReadLine(), out int secondNumber))
-            {
-                this.i = firstNumber;
-                this.j = secondNumber;
-            }
-        }
-        void CheckNumber()
-        {
-            Console.WriteLine("Geben Sie eine Zahl ein");
-            if (!int.TryParse(Console.ReadLine(), out int number)) Console.WriteLine("Falsche Eingabe");
-            else this.i = number;
-        }
+        
     }
 }
